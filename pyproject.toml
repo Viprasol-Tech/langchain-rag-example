@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-rag-example"
+version = "0.1.0"
+description = "A clean LangChain RAG example (load, split, embed, retrieve, answer) runnable offline."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Viprasol Tech Private Limited", email = "support@viprasol.com" }]
+keywords = ["langchain", "rag", "retrieval", "embeddings", "vector-search", "llm", "nlp", "example"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+core = ["langchain-core>=0.3"]
+openai = ["langchain-openai>=0.2"]
+faiss = ["faiss-cpu>=1.8"]
+dev = ["ruff>=0.6", "mypy>=1.11", "pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://viprasol.com"
+Repository = "https://github.com/Viprasol-Tech/langchain-rag-example"
+Issues = "https://github.com/Viprasol-Tech/langchain-rag-example/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_rag_example"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests", "examples"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src"]
+warn_unused_configs = true
+show_error_codes = true
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]

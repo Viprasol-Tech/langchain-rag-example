@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Telegram support
+    url: https://t.me/viprasol_help
+    about: Quick questions and community help.
+  - name: ✉️ Email Viprasol Tech
+    url: mailto:support@viprasol.com
+    about: Business enquiries and security reports.

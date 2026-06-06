@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a problem with LangChain RAG Example
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to file a bug report!
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps or code to reproduce the behaviour.
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: "0.1.0 or commit SHA"
+    validations:
+      required: false
+  - type: input
+    id: env
+    attributes:
+      label: Python & OS
+      placeholder: "Python 3.12 on Ubuntu 24.04"
+    validations:
+      required: false
