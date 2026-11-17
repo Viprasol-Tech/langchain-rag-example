@@ -68,7 +68,7 @@ retriever = InMemoryVectorRetriever(chunks, FakeEmbeddings(), k=3)
 chain = RetrievalQA(retriever)
 
 result = chain.invoke("What does Viprasol Tech build?")
-print(result.answer)              # grounded answer
+print(result.answer)  # grounded answer
 print(len(result.source_documents))  # the chunks it used
 ```
 
@@ -76,6 +76,7 @@ To go live, install the OpenAI extra and swap the embeddings:
 
 ```python
 from langchain_rag_example import get_openai_embeddings
+
 embeddings = get_openai_embeddings()  # reads OPENAI_API_KEY; requires the [openai] extra
 ```
 
